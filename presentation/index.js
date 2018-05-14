@@ -243,6 +243,43 @@ export default class Presentation extends React.Component {
             https://electronjs.org/docs/api
           </Heading>
         </Slide>
+        <Slide transition={['fade']} bgColor="primary">
+          <Heading size={1} fit lineHeight={1} textColor="secondary">
+            Proton Native
+          </Heading>
+          <Appear fid={1}>
+            <Text margin="10px 0 0" textColor="tertiary" size={1} bold>
+              Advantages
+            </Text>
+          </Appear>
+          <Appear fid={2}>
+            <List>
+              <ListItem textColor="quarternary">Use native OS widgets</ListItem>
+              <ListItem textColor="quarternary">All widgets are created and handled in C, making for generally better performance</ListItem>
+              <ListItem textColor="quarternary">Simple React components very similar to React Native components</ListItem>
+              <ListItem textColor="quarternary">Constantly being improved and added to</ListItem>
+              <ListItem textColor="quarternary">Discord</ListItem>
+              <ListItem textColor="quarternary">Slack</ListItem>
+            </List>
+          </Appear>
+          <Appear fid={3}>
+            <Text>Disadvantages</Text>
+          </Appear>
+          <Appear fid={4}>
+            <List>
+              <ListItem textColor="quarternary">Smaller selection of widgets than Electron</ListItem>
+              <ListItem textColor="quarternary">Smaller community since Proton Native is newer</ListItem>
+            </List>
+          </Appear>
+        </Slide>
+        <CodeSlide
+          transition={[]}
+          lang="jsx"
+          code={require('raw-loader!../assets/proton-native.example')}
+          ranges={[
+            { loc: [0, 19] },
+          ]}
+        />
       </Deck>
     );
   }
