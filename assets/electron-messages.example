@@ -1,0 +1,15 @@
+// Render Window JS (maybe index.js?)
+import { ipcRenderer } from 'electron';
+
+const closeButton = document.querySelector('.close');
+
+closeButton.addEventListener('click', () => {
+    ipcRenderer.send('close-main-window');
+});
+
+// main.js
+import { ipcMain } from 'electron';
+
+ipcMain.on('close-main-window', () => {
+    app.quit();
+});
