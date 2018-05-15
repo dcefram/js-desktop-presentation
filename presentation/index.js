@@ -31,6 +31,7 @@ const images = {
   chrome: require('../assets/chrome.svg'),
   electronFlow: require('../assets/electron-flow.svg'),
   electronRender: require('../assets/electron-spawn-render.svg'),
+  cef: require('../assets/cef.svg'),
 };
 
 preloader(images);
@@ -81,7 +82,7 @@ export default class Presentation extends React.Component {
             </Appear>
           </List>
         </Slide>
-        <Slide transition={['fade']} bgColor="secondary">
+        <Slide transition={['zoom']} bgColor="secondary">
           <Heading size={1} fit caps lineHeight={1} textColor="quarternary">
             Did you know that you can use JavaScript to create a website?
           </Heading>
@@ -95,7 +96,7 @@ export default class Presentation extends React.Component {
           </List>
         </Slide>
         <CodeSlide
-          transition={[]}
+          transition={['fade']}
           lang="jsx"
           code={require('raw-loader!../assets/react.example')}
           ranges={[
@@ -128,7 +129,7 @@ export default class Presentation extends React.Component {
           <Image width="10%" margin="0 auto 50px" src={images.nodejs} />
           <Image width="10%" margin="0 auto 50px" src={images.chrome} />
         </Slide>
-        <Slide transition={['fade']} bgColor="tertiary">
+        <Slide transition={['zoom']} bgColor="tertiary">
           <Heading size={1} fit caps lineHeight={1} textColor="quarternary">
             What else can you do using JavaScript???
           </Heading>
@@ -161,7 +162,7 @@ export default class Presentation extends React.Component {
             </List>
           </Appear>
         </Slide>
-        <Slide transition={['fade']} bgColor="primary">
+        <Slide transition={['slide']} bgColor="primary">
           <Heading size={1} fit caps lineHeight={1} textColor="secondary">
             Electron JS
           </Heading>
@@ -202,7 +203,7 @@ export default class Presentation extends React.Component {
           <Image width="100%" margin="0 auto 50px" src={images.electronRender} />
         </Slide>
         <CodeSlide
-          transition={[]}
+          transition={['fade']}
           lang="jsx"
           code={require('raw-loader!../assets/electron-render.example')}
           ranges={[
@@ -224,13 +225,13 @@ export default class Presentation extends React.Component {
             <Appear fid={2}>
               <ListItem textColor="tertiary">IPC - Inter-process communication</ListItem>
             </Appear>
-            <Appear fid={2}>
+            <Appear fid={3}>
               <ListItem textColor="tertiary">It allows a process to subscribe and/or send messages to a channel</ListItem>
             </Appear>
           </List>
         </Slide>
         <CodeSlide
-          transition={[]}
+          transition={['fade']}
           lang="jsx"
           code={require('raw-loader!../assets/electron-messages.example')}
           ranges={[
@@ -243,43 +244,65 @@ export default class Presentation extends React.Component {
             https://electronjs.org/docs/api
           </Heading>
         </Slide>
-        <Slide transition={['fade']} bgColor="primary">
-          <Heading size={1} fit lineHeight={1} textColor="secondary">
-            Proton Native
+        <Slide transition={['slide']} bgColor="tertiary">
+          <Heading size={1} fit lineHeight={1} textColor="quarternary">
+            Chromium Embedded Framework (CEF)
           </Heading>
           <Appear fid={1}>
-            <Text margin="10px 0 0" textColor="tertiary" size={1} bold>
-              Advantages
-            </Text>
-          </Appear>
-          <Appear fid={2}>
-            <List>
-              <ListItem textColor="quarternary">Use native OS widgets</ListItem>
-              <ListItem textColor="quarternary">All widgets are created and handled in C, making for generally better performance</ListItem>
-              <ListItem textColor="quarternary">Simple React components very similar to React Native components</ListItem>
-              <ListItem textColor="quarternary">Constantly being improved and added to</ListItem>
-              <ListItem textColor="quarternary">Discord</ListItem>
-              <ListItem textColor="quarternary">Slack</ListItem>
-            </List>
-          </Appear>
-          <Appear fid={3}>
-            <Text>Disadvantages</Text>
-          </Appear>
-          <Appear fid={4}>
-            <List>
-              <ListItem textColor="quarternary">Smaller selection of widgets than Electron</ListItem>
-              <ListItem textColor="quarternary">Smaller community since Proton Native is newer</ListItem>
-            </List>
+            <Image width="100%" src={images.cef} />
           </Appear>
         </Slide>
-        <CodeSlide
-          transition={[]}
-          lang="jsx"
-          code={require('raw-loader!../assets/proton-native.example')}
-          ranges={[
-            { loc: [0, 19] },
-          ]}
-        />
+        <Slide transition={['slide']} bgColor="tertiary">
+          <Heading size={1} lineHeight={1} textColor="quarternary">
+            Pros
+          </Heading>
+          <List>
+            <Appear fid={1}>
+              <ListItem textColor="quarternary">Easier to implement unique UI</ListItem>
+            </Appear>
+            <Appear fid={2}>
+              <ListItem textColor="quarternary">Development Speed</ListItem>
+            </Appear>
+            <Appear fid={3}>
+              <ListItem textColor="quarternary">Cross-platform</ListItem>
+            </Appear>
+          </List>
+        </Slide>
+        <Slide transition={['slide']} bgColor="tertiary">
+          <Heading size={1} lineHeight={1} textColor="quarternary">
+            Cons
+          </Heading>
+          <List>
+            <Appear fid={1}>
+              <ListItem textColor="quarternary">Performance</ListItem>
+            </Appear>
+            <Appear fid={2}>
+              <ListItem textColor="quarternary">Resource consumption</ListItem>
+            </Appear>
+            <Appear fid={3}>
+              <ListItem textColor="quarternary">Single Threaded</ListItem>
+            </Appear>
+            <Appear fid={4}>
+              <ListItem textColor="quarternary">UI...</ListItem>
+            </Appear>
+          </List>
+        </Slide>
+        <Slide transition={['zoom']} bgColor="primary">
+          <Heading size={1} lineHeight={1} textColor="secondary">
+            Conclusion
+          </Heading>
+          <List>
+            <Appear fid={1}>
+              <ListItem textColor="tertiary">Use it on prototypes</ListItem>
+            </Appear>
+            <Appear fid={2}>
+              <ListItem textColor="tertiary">Use it if you need a unified UI between Web and the Desktop App</ListItem>
+            </Appear>
+            <Appear fid={3}>
+              <ListItem textColor="tertiary">Use it if you are a web developer. But don't pretend that it is a native app, and you are a systems engineer.</ListItem>
+            </Appear>
+          </List>
+        </Slide>
       </Deck>
     );
   }
