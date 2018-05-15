@@ -6,6 +6,8 @@ Short talk about using JavaScript to create desktop apps that eat up your RAM.
 
 ### Running
 
+> Prereq: You should have [NodeJS](https://nodejs.org/en/) installed and [Yarn](https://yarnpkg.com/en/)
+
 - execute `yarn`
 - after installing all dependencies, execute `npm start`
 - go to `localhost:4444` :D
